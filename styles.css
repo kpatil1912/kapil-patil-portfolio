@@ -2,12 +2,17 @@
     --teal-dark: #004d40;
     --teal: #00796b;
     --teal-light: #b2dfdb;
+    --blue-dark: #003366;
+    --blue: #00509e;
+    --blue-light: #cce0ff;
     --background-light: #f0f4f8;
+    --background-dark: #e0e5e8;
     --text-dark: #333;
     --white: #ffffff;
     --shadow-light: rgba(0, 0, 0, 0.1);
     --font-primary: 'Arial', sans-serif;
     --font-secondary: 'Georgia', serif;
+    --border-color: #e0e5e8;
 }
 
 body, h1, h2, h3, p, ul, li, input, textarea {
@@ -21,11 +26,10 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background-light);
-    padding-top: 80px;
-    padding-bottom: 60px;
+    padding-top: 80px; /* Space for the fixed header */
+    padding-bottom: 60px; /* Space for the fixed footer */
 }
 
-/* Header styles */
 header {
     background: var(--teal-dark);
     color: var(--white);
@@ -96,6 +100,11 @@ nav ul li a:hover {
 
 .job, .education {
     margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--white);
+    box-shadow: 0 4px 6px var(--shadow-light);
+    padding: 1rem;
 }
 
 .job h3, .education h3 {
@@ -112,6 +121,7 @@ nav ul li a:hover {
 
 .skill {
     background: var(--white);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1.5rem;
     text-align: center;
@@ -153,4 +163,31 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header .subtitle {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
